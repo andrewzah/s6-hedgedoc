@@ -1,3 +1,5 @@
+[![Docker Pulls](https://img.shields.io/docker/pulls/andrewzah/hedgedoc)](https://hub.docker.com/r/andrewzah/hedgedoc)
+
 ## potential issues
 ### migrating versions
 ```
