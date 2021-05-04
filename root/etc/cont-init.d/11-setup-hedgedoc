@@ -1,0 +1,22 @@
+#!/usr/bin/with-contenv bash
+
+[[ ! -f /config/config.json ]] && \
+    cp /defaults/config.json /config/config.json
+
+symlinks=( \
+/opt/hedgedoc/public/docs \
+/opt/hedgedoc/public/uploads \
+/opt/hedgedoc/public/views \
+/opt/hedgedoc/public/default.md 
+)
+for i in "${symlinks[@]}"; do
+    [[ -e "$i" && ! -L "$i" && -e /config/"$(basename "$i")" ]] && \
+        rm -Rf "$i" && \
+        ln -s /config/"$(basename "$i")" "$i"
+    [[ -e "$i" && ! -L "$i" ]] && \
+        mv "$i" /config/"$(basename "$i")" && \
+        ln -s /config/"$(basename "$i")" "$i"
+done
+
+chown -R abc:abc \
+    /config
