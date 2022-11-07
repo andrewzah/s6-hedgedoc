@@ -23,7 +23,7 @@ apk add --update --no-cache \
 echo "**** install hedgedoc ****"
 curl -o \
   /tmp/hedgedoc.tar.gz -L \
-  "https://github.com/hedgedoc/hedgedoc/releases/download/${HEDGEDOC_RELEASE}/hedgedoc-${HEDGEDOC_RELEASE}.tar.gz"
+  "https://github.com/hedgedoc/hedgedoc/releases/download/${HEDGEDOC_VERSION}/hedgedoc-${HEDGEDOC_VERSION}.tar.gz"
 
 mkdir -p /opt/hedgedoc
 tar xf /tmp/hedgedoc.tar.gz -C \

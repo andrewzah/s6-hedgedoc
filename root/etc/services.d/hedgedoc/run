@@ -1,9 +1,9 @@
-#!/usr/bin/with-contenv bash
+#!/command/with-contenv bash
 
 set -ex
 
 [[ -n ${DB_HOST+x} ]] && \
-    export CMD_DB_URL="mysql://${DB_USER}:${DB_PASS}@${DB_HOST}:${DB_PORT}/${DB_NAME}"
+    export CMD_DB_URL="postgresql://${DB_USER}:${DB_PASS}@${DB_HOST}:${DB_PORT}/${DB_NAME}"
 
 [[ -z ${CMD_CONFIG_FILE+x} ]] && \
     export CMD_CONFIG_FILE="/config/config.json"
